@@ -6,9 +6,6 @@ data_dir = "/var/lib/vector"
 ## Sources
 ##
 
-[sources.internal_metrics]
-type = "internal_metrics"
-
 [sources.logs]
 type = "http"
 address = "0.0.0.0:8282"
@@ -200,11 +197,6 @@ filter.source = "source:browser"
 ##
 ## Sinks
 ##
-
-[sinks.prometheus]
-type = "prometheus_exporter"
-inputs = ["internal_metrics"]
-address = "0.0.0.0:9090"
 
 [sinks.blackhole]
 type = "blackhole"

@@ -4,9 +4,6 @@ data_dir = "/var/lib/vector"
 ## Sources
 ##
 
-[sources.internal_metrics]
-type = "internal_metrics"
-
 [sources.splunk]
 address = "0.0.0.0:8282"
 type = "splunk_hec"
@@ -26,11 +23,6 @@ sidecar = '.attrs.c2cContainerType != "service"'
 ##
 ## Sinks
 ##
-
-[sinks.prometheus]
-type = "prometheus_exporter"
-inputs = ["internal_metrics"]
-address = "0.0.0.0:9090"
 
 [sinks.s3_sidecar]
 type = "aws_s3"

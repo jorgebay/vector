@@ -4,9 +4,6 @@ data_dir = "/var/lib/vector"
 ## Sources
 ##
 
-[sources.internal_metrics]
-type = "internal_metrics"
-
 [sources.datadog_agent]
 type = "datadog_agent"
 acknowledgements = true
@@ -29,11 +26,6 @@ if err == null {
 ##
 ## Sinks
 ##
-
-[sinks.prometheus]
-type = "prometheus_exporter"
-inputs = ["internal_metrics"]
-address = "0.0.0.0:9090"
 
 [sinks.datadog_logs]
 type = "datadog_logs"

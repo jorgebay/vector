@@ -4,9 +4,6 @@ data_dir = "/var/lib/vector"
 ## Sources
 ##
 
-[sources.internal_metrics]
-type = "internal_metrics"
-
 [sources.http_source]
 type = "http"
 acknowledgements = false
@@ -15,11 +12,6 @@ address = "0.0.0.0:8282"
 ##
 ## Sinks
 ##
-
-[sinks.prometheus]
-type = "prometheus_exporter"
-inputs = ["internal_metrics"]
-address = "0.0.0.0:9090"
 
 [sinks.http_sink]
 type = "http"
